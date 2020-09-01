@@ -1,7 +1,7 @@
 {
   "name": "gatbsy-wordpress-starter",
   "private": true,
-  "description": "Gatsby/Wordpress boiler for rapid development with Styled Components.",
+  "description": "A Gatsby/Wordpress starter with Custom Post Types and Styled Components.",
   "version": "0.1.0",
   "author": "Midcoast Collective <info@midcoast.io>",
   "dependencies": {

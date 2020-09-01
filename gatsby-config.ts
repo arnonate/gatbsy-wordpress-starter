@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `gatsby-wordpress-stater`,
-    description: `Gatsby/Wordpress boiler for rapid development with Styled Components.`,
+    description: `A Gatsby/Wordpress starter with Custom Post Types and Styled Components.`,
     author: `@arnonate`,
   },
   plugins: [
