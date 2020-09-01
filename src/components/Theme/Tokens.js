@@ -1,0 +1,56 @@
+export const Tokens = {
+  border: {
+    radius: "4px",
+  },
+  color: {
+    white: `#FFFFFF`,
+    black: `#212023`,
+    default: `#3E3E3E`,
+    dark: `#51455E`,
+    light: `#e1e1e1`,
+    border: "#bfbfbf",
+    purple: `#6917c1`,
+    gold: `#e9a43c`,
+  },
+  font: {
+    family: `"Montserrat", sans-serif`,
+    size: {
+      micro: `10px`,
+      small: `13px`,
+      subBase: `15px`,
+      base: `16px`,
+      large: `18px`,
+      super: `20px`,
+      extra: `22px`,
+      ultra: `45px`,
+      ultraMobile: `30px`,
+      ridiculous: `200px`,
+      ridiculousMobile: `120px`,
+    },
+    lineHeight: `24px`,
+    weight: {
+      light: `300`,
+      normal: `400`,
+      bold: `700`,
+      black: `900`,
+    },
+  },
+  rhythm: `24px`,
+  screen: {
+    medium: `1140px`,
+    large: `1400px`,
+  },
+  wrap: {
+    wide: `1200px`,
+    narrow: `800px`,
+  },
+  z: {
+    bottom: -2,
+    behind: -1,
+    baseline: 0,
+    header: 1,
+    band: 2,
+    language: 3,
+    modal: 4,
+  },
+}
