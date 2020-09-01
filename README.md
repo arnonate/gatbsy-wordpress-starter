@@ -12,10 +12,8 @@ Associated Blog Post:
 
 3. Install the following plugins:
 
-- [Advanced Custom Fields](https://github.com/AdvancedCustomFields/acf)
+- [WP Gatsby](https://github.com/gatsbyjs/wp-gatsby)
 - [WP GraphQL](https://github.com/wp-graphql/wp-graphql)
-- [WP GraphQL for Advanced Custom Fields](https://github.com/wp-graphql/wp-graphql-acf)
-- [WP GraphQL Custom Post Types and Custom Taxonomies](https://github.com/DalkMania/wp-graphql-cpt)
 
 1.  **Start developing.**
 

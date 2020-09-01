@@ -32,7 +32,7 @@
         'capability_type'       => 'page',
         'hierarchical'          => false, // Allows your posts to behave like Hierarchy Pages
         'has_archive'           => true,
-        'supports'              => array('title','thumbnail'), // Go to Dashboard Custom HTML5 Blank post for supports
+        'supports'              => array('title','thumbnail','editor', 'revisions'), // Other Options: author, excerpt, trackbacks, custom-fields, page-attributes, comments, post-formats
         'can_export'            => true, // Allows export in Tools > Export
         'taxonomies'            => array(), // Add supported taxonomies
       )
