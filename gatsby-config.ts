@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url: `https://admin.wanna.com/graphql`,
+        url: `http://gatsbywordpressstarter.local/graphql`,
         verbose: true,
         develop: {
           hardCacheMediaFiles: true,
