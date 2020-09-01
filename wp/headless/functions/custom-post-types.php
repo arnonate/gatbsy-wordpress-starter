@@ -30,11 +30,14 @@
         'show_in_menu'          => true,
         'publicly_queryable'    => true,
         'capability_type'       => 'page',
-        'hierarchical'          => false, // Allows your posts to behave like Hierarchy Pages
+        'hierarchical'          => false,
         'has_archive'           => true,
         'supports'              => array('title','thumbnail','editor', 'revisions'), // Other Options: author, excerpt, trackbacks, custom-fields, page-attributes, comments, post-formats
         'can_export'            => true, // Allows export in Tools > Export
-        'taxonomies'            => array(), // Add supported taxonomies
+        'taxonomies'            => array(), // Add supported taxonomies,
+        'show_in_graphql'       => true,
+        'graphql_single_name'   => 'CustomPost',
+        'graphql_plural_name'   => 'CustomPosts',
       )
     );
   }
