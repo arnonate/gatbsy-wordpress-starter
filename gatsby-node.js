@@ -74,16 +74,6 @@ exports.createPages = async ({ graphql, actions }) => {
       databaseId: 4,
       template: path.resolve("./src/templates/About.tsx"),
     },
-    {
-      path: "/contact/",
-      databaseId: 4,
-      template: path.resolve("./src/templates/Contact.tsx"),
-    },
-    {
-      path: "/thanks/",
-      databaseId: 4,
-      template: path.resolve("./src/templates/Thanks.tsx"),
-    },
   ]
 
   pages.forEach(page => {

@@ -1,6 +1,6 @@
 # 🚀 Gatbsy/Wordpress Starter
 
-A Gatsby/Wordpress starter with Custom Post Types and Styled Components.
+A Gatsby/Wordpress TypeScript Starter.
 
 Associated Blog Post:
 
@@ -25,7 +25,7 @@ Associated Blog Post:
 
 2. Open the Gatsby project and run the following command: `yarn && yarn develop` (or the npm alternative).
 
-## Default Gatbsy Info
+## Start Developing
 
 1. **Start developing.**
 

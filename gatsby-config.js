@@ -1,14 +1,13 @@
 module.exports = {
   siteMetadata: {
     title: `gatsby-wordpress-stater`,
-    description: `A Gatsby/Wordpress starter with Custom Post Types and Styled Components.`,
+    description: `A Gatsby/Wordpress TypeScript Starter.`,
     author: `@arnonate`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

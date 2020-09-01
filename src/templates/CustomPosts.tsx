@@ -6,16 +6,16 @@ import { Layout, Seo } from "../components"
 const Template = ({ data, pageContext }) => {
   return (
     <Layout>
-      <Seo title="Home Page" />
+      <Seo title="Posts Page" />
 
-      <h1>Home Page</h1>
+      <h1>Posts Page</h1>
     </Layout>
   )
 }
 
 export const Query = graphql`
   query {
-    page: wpPage(slug: { eq: "home" }) {
+    page: wpPage(slug: { eq: "posts" }) {
       id
     }
   }
