@@ -17,7 +17,7 @@ Associated Blog Post:
 
 * Current versions of these plugins (at the time of writing the associated blog post) are available in the `wp` directory.
 
-4. Import sample `.xml` content from the `wp` directory using the "Wordpress Importer" plugin which is available by going to "Tools > Import". If you don't want to import content then you can simply publish the required Pages (Home, About, Contact, Thanks), Posts and Custom Posts yourself.
+4. Import sample `.xml` content from the `wp` directory using the "Wordpress Importer" plugin which is available by going to "Tools > Import". If you don't want to import content then you can simply publish the required Pages (Home, About, Contact, Thanks), Posts and Custom Posts yourself. You will also need to add "Featured Images" to your pages and posts if you want that to show
 
 ## Configure Gatsby Source Wordpress
 
