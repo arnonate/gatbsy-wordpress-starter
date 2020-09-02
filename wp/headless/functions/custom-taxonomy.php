@@ -37,6 +37,9 @@
       'show_in_nav_menus'          => false,
       'show_tagcloud'              => false,
       'show_in_rest'               => true,
+      'show_in_graphql'       => true,
+      'graphql_single_name'   => 'Taxonomy',
+      'graphql_plural_name'   => 'Taxonomies',
     );
 
     register_taxonomy( 'taxonomy', array( 'page' ), $args );
