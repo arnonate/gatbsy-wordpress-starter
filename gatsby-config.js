@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `gatsby-wordpress-stater`,
+    title: `Headless`,
     description: `A Gatsby/Wordpress TypeScript Starter.`,
     author: `@arnonate`,
   },
@@ -39,5 +39,18 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Headless`,
+        short_name: `Headless`,
+        start_url: `/`,
+        background_color: `#074761`,
+        theme_color: `#3E9F88`,
+        display: `minimal-ui`,
+        icon: `src/images/icon.png`,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 }
