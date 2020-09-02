@@ -1,7 +1,7 @@
 {
   "name": "gatbsy-wordpress-starter",
   "private": true,
-  "description": "A Gatsby/Wordpress TypeScript Starter.",
+  "description": "A relatively unopinionated Gatsby/WordPress/TypeScript starter. ",
   "version": "0.1.0",
   "author": "Nate Arnold <hello@natearnold.me>",
   "dependencies": {
@@ -41,10 +41,11 @@
     "gatsby",
     "wordpress",
     "typescript",
-    "gatsby-cloud",
-    "netlify",
     "jest",
-    "react-testing-library"
+    "graphql",
+    "react-testing-library",
+    "gatsby-cloud",
+    "netlify"
   ],
   "license": "MIT",
   "scripts": {

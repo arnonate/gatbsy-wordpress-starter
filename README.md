@@ -1,6 +1,6 @@
 # 🚀 Gatbsy/Wordpress Starter
 
-A Gatsby/Wordpress TypeScript Starter.
+A relatively unopinionated Gatsby/WordPress/TypeScript starter.
 
 Associated Blog Post:
 
