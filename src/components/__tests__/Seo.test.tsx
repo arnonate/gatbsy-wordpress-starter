@@ -1,62 +1,58 @@
 import React from "react"
 import { render, waitFor } from "@testing-library/react"
-import { useStaticQuery } from "gatsby"
 import Helmet from "react-helmet"
 
-import Seo from "../Seo/Seo"
+import { SeoComponent as Seo, DataProps } from "../Seo/Seo"
 
-describe(`Seo`, () => {
-  beforeEach(() => {
-    ;(useStaticQuery as jest.Mock).mockImplementation(() => ({
-      site: {
-        siteMetadata: {
-          title: "My Test Site",
-          description: "This is the Test Site description.",
-          author: "@arnonate",
-        },
-      },
-    }))
-  })
+const data: DataProps = {
+  site: {
+    siteMetadata: {
+      title: "Headless",
+      description: "This is the description of Headless.",
+      author: "@arnonate",
+    },
+  },
+}
 
-  it(`renders title correctly with default site description and author`, async () => {
-    render(<Seo title="Hello World" />)
+describe("Seo", () => {
+  it("renders title correctly with default site description and author", async () => {
+    render(<Seo title="Headless Page" data={data} />)
 
     await waitFor(() => {
       const headData = Helmet.peek()
-
       return expect(headData).toMatchSnapshot()
     })
   })
 
-  it(`renders description correctly`, async () => {
+  it("renders description correctly", async () => {
     render(
       <Seo
-        title="Hello World"
-        description="This is a description of Hello World"
+        title="Headless Page"
+        description="This is a description of Headless Page"
+        data={data}
       />
     )
 
     await waitFor(() => {
       const headData = Helmet.peek()
-
       return expect(headData).toMatchSnapshot()
     })
   })
 
-  it(`renders metadata correctly`, async () => {
+  it("renders metadata correctly", async () => {
     render(
       <Seo
-        title="Hello World"
+        title="Headless Page"
         meta={[
           { name: "meta", content: "content" },
           { property: "meta", content: "content" },
         ]}
+        data={data}
       />
     )
 
     await waitFor(() => {
       const headData = Helmet.peek()
-
       return expect(headData).toMatchSnapshot()
     })
   })

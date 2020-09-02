@@ -1,9 +1,15 @@
 import React from "react"
 
-const Footer = () => (
+import { DataProps as LayoutDataProps } from "../Layout/Layout"
+
+type ComponentProps = {
+  data: LayoutDataProps
+}
+
+const Footer = ({ data }: ComponentProps) => (
   <footer>
-    &copy; {new Date().getFullYear()} Headless. A Gatsby/WP starter by{" "}
-    <a href="https://twitter.com/arnonate">arnonate</a>
+    &copy; {new Date().getFullYear()} {data.site.siteMetadata.title}. A
+    Gatsby/WP starter by <a href="https://twitter.com/arnonate">arnonate</a>
   </footer>
 )
 

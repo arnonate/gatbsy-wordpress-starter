@@ -2,13 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-type SeoProps = {
-  description?: string
-  meta?: JSX.IntrinsicElements["meta"][]
-  title: string
-}
-
-type MetaData = {
+export type DataProps = {
   site: {
     siteMetadata: {
       title: string
@@ -18,26 +12,24 @@ type MetaData = {
   }
 }
 
-const Seo = ({
+type ComponentProps = {
+  data: Readonly<DataProps>
+  description?: string
+  meta?: React.DetailedHTMLProps<
+    React.MetaHTMLAttributes<HTMLMetaElement>,
+    HTMLMetaElement
+  >[]
+  title: string
+}
+
+export const SeoComponent = ({
   description = "",
   meta = [],
   title,
-}: Readonly<SeoProps>): JSX.Element => {
-  const { site }: MetaData = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
-
-  const metaDescription: string = description || site.siteMetadata.description
+  data,
+}: Readonly<ComponentProps>) => {
+  const { site } = data
+  const metaDescription = description || site.siteMetadata.description
 
   return (
     <Helmet
@@ -76,9 +68,28 @@ const Seo = ({
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+        ...meta,
+      ]}
     />
   )
+}
+
+const Seo = (props: ComponentProps): JSX.Element => {
+  const data = useStaticQuery<DataProps>(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            author
+          }
+        }
+      }
+    `
+  )
+
+  return <SeoComponent {...props} data={data} />
 }
 
 export default Seo

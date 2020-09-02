@@ -1,43 +1,35 @@
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import React from "react"
 import Img from "gatsby-image"
 
-const Header = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      logo: file(relativePath: { eq: "logo.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
-          }
-        }
-      }
-    }
-  `)
+import { DataProps as LayoutDataProps } from "../Layout/Layout"
 
-  return (
-    <header>
-      <div className="logo">
-        <Link to="/">
-          <Img
-            fluid={data.logo.childImageSharp.fluid}
-            alt="Wanna"
-            loading="eager"
-          />
-        </Link>
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">HOME</Link>
-          </li>
-          <li>
-            <Link to="/about/">ABOUT</Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  )
+type ComponentProps = {
+  data: LayoutDataProps
 }
+
+const Header = ({ data }: Readonly<ComponentProps>) => (
+  <header>
+    <div className="logo">
+      <Link to="/">
+        <Img
+          fluid={data.logo.childImageSharp.fluid}
+          alt={data.site.siteMetadata.title}
+          loading="eager"
+        />
+      </Link>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <Link to="/">HOME</Link>
+        </li>
+        <li>
+          <Link to="/about/">ABOUT</Link>
+        </li>
+      </ul>
+    </nav>
+  </header>
+)
 
 export default Header

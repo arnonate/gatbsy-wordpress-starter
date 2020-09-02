@@ -10,15 +10,15 @@ Object {
   "linkTags": Array [],
   "metaTags": Array [
     Object {
-      "content": "This is a description of Hello World",
+      "content": "This is a description of Headless Page",
       "name": "description",
     },
     Object {
-      "content": "Hello World",
+      "content": "Headless Page",
       "property": "og:title",
     },
     Object {
-      "content": "This is a description of Hello World",
+      "content": "This is a description of Headless Page",
       "property": "og:description",
     },
     Object {
@@ -34,11 +34,11 @@ Object {
       "name": "twitter:creator",
     },
     Object {
-      "content": "Hello World",
+      "content": "Headless Page",
       "name": "twitter:title",
     },
     Object {
-      "content": "This is a description of Hello World",
+      "content": "This is a description of Headless Page",
       "name": "twitter:description",
     },
   ],
@@ -46,7 +46,7 @@ Object {
   "onChangeClientState": [Function],
   "scriptTags": Array [],
   "styleTags": Array [],
-  "title": "Hello World | My Test Site",
+  "title": "Headless Page | Headless",
   "titleAttributes": Object {},
 }
 `;
@@ -61,15 +61,15 @@ Object {
   "linkTags": Array [],
   "metaTags": Array [
     Object {
-      "content": "This is the Test Site description.",
+      "content": "This is the description of Headless.",
       "name": "description",
     },
     Object {
-      "content": "Hello World",
+      "content": "Headless Page",
       "property": "og:title",
     },
     Object {
-      "content": "This is the Test Site description.",
+      "content": "This is the description of Headless.",
       "property": "og:description",
     },
     Object {
@@ -85,11 +85,11 @@ Object {
       "name": "twitter:creator",
     },
     Object {
-      "content": "Hello World",
+      "content": "Headless Page",
       "name": "twitter:title",
     },
     Object {
-      "content": "This is the Test Site description.",
+      "content": "This is the description of Headless.",
       "name": "twitter:description",
     },
     Object {
@@ -105,7 +105,7 @@ Object {
   "onChangeClientState": [Function],
   "scriptTags": Array [],
   "styleTags": Array [],
-  "title": "Hello World | My Test Site",
+  "title": "Headless Page | Headless",
   "titleAttributes": Object {},
 }
 `;
@@ -120,15 +120,15 @@ Object {
   "linkTags": Array [],
   "metaTags": Array [
     Object {
-      "content": "This is the Test Site description.",
+      "content": "This is the description of Headless.",
       "name": "description",
     },
     Object {
-      "content": "Hello World",
+      "content": "Headless Page",
       "property": "og:title",
     },
     Object {
-      "content": "This is the Test Site description.",
+      "content": "This is the description of Headless.",
       "property": "og:description",
     },
     Object {
@@ -144,11 +144,11 @@ Object {
       "name": "twitter:creator",
     },
     Object {
-      "content": "Hello World",
+      "content": "Headless Page",
       "name": "twitter:title",
     },
     Object {
-      "content": "This is the Test Site description.",
+      "content": "This is the description of Headless.",
       "name": "twitter:description",
     },
   ],
@@ -156,7 +156,7 @@ Object {
   "onChangeClientState": [Function],
   "scriptTags": Array [],
   "styleTags": Array [],
-  "title": "Hello World | My Test Site",
+  "title": "Headless Page | Headless",
   "titleAttributes": Object {},
 }
 `;
