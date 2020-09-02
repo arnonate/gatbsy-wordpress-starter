@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Seo renders description correctly 1`] = `
+Object {
+  "baseTag": Array [],
+  "bodyAttributes": Object {},
+  "defer": true,
+  "encode": true,
+  "htmlAttributes": Object {},
+  "linkTags": Array [],
+  "metaTags": Array [
+    Object {
+      "content": "This is a description of Hello World",
+      "name": "description",
+    },
+    Object {
+      "content": "Hello World",
+      "property": "og:title",
+    },
+    Object {
+      "content": "This is a description of Hello World",
+      "property": "og:description",
+    },
+    Object {
+      "content": "website",
+      "property": "og:type",
+    },
+    Object {
+      "content": "summary",
+      "name": "twitter:card",
+    },
+    Object {
+      "content": "@arnonate",
+      "name": "twitter:creator",
+    },
+    Object {
+      "content": "Hello World",
+      "name": "twitter:title",
+    },
+    Object {
+      "content": "This is a description of Hello World",
+      "name": "twitter:description",
+    },
+  ],
+  "noscriptTags": Array [],
+  "onChangeClientState": [Function],
+  "scriptTags": Array [],
+  "styleTags": Array [],
+  "title": "Hello World | My Test Site",
+  "titleAttributes": Object {},
+}
+`;
+
+exports[`Seo renders metadata correctly 1`] = `
+Object {
+  "baseTag": Array [],
+  "bodyAttributes": Object {},
+  "defer": true,
+  "encode": true,
+  "htmlAttributes": Object {},
+  "linkTags": Array [],
+  "metaTags": Array [
+    Object {
+      "content": "This is the Test Site description.",
+      "name": "description",
+    },
+    Object {
+      "content": "Hello World",
+      "property": "og:title",
+    },
+    Object {
+      "content": "This is the Test Site description.",
+      "property": "og:description",
+    },
+    Object {
+      "content": "website",
+      "property": "og:type",
+    },
+    Object {
+      "content": "summary",
+      "name": "twitter:card",
+    },
+    Object {
+      "content": "@arnonate",
+      "name": "twitter:creator",
+    },
+    Object {
+      "content": "Hello World",
+      "name": "twitter:title",
+    },
+    Object {
+      "content": "This is the Test Site description.",
+      "name": "twitter:description",
+    },
+    Object {
+      "content": "content",
+      "name": "meta",
+    },
+    Object {
+      "content": "content",
+      "property": "meta",
+    },
+  ],
+  "noscriptTags": Array [],
+  "onChangeClientState": [Function],
+  "scriptTags": Array [],
+  "styleTags": Array [],
+  "title": "Hello World | My Test Site",
+  "titleAttributes": Object {},
+}
+`;
+
+exports[`Seo renders title correctly with default site description and author 1`] = `
+Object {
+  "baseTag": Array [],
+  "bodyAttributes": Object {},
+  "defer": true,
+  "encode": true,
+  "htmlAttributes": Object {},
+  "linkTags": Array [],
+  "metaTags": Array [
+    Object {
+      "content": "This is the Test Site description.",
+      "name": "description",
+    },
+    Object {
+      "content": "Hello World",
+      "property": "og:title",
+    },
+    Object {
+      "content": "This is the Test Site description.",
+      "property": "og:description",
+    },
+    Object {
+      "content": "website",
+      "property": "og:type",
+    },
+    Object {
+      "content": "summary",
+      "name": "twitter:card",
+    },
+    Object {
+      "content": "@arnonate",
+      "name": "twitter:creator",
+    },
+    Object {
+      "content": "Hello World",
+      "name": "twitter:title",
+    },
+    Object {
+      "content": "This is the Test Site description.",
+      "name": "twitter:description",
+    },
+  ],
+  "noscriptTags": Array [],
+  "onChangeClientState": [Function],
+  "scriptTags": Array [],
+  "styleTags": Array [],
+  "title": "Hello World | My Test Site",
+  "titleAttributes": Object {},
+}
+`;

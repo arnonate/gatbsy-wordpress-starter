@@ -5,6 +5,15 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const query = await graphql(`
     {
+      allWpPage {
+        edges {
+          node {
+            databaseId
+            slug
+            status
+          }
+        }
+      }
       allWpPost {
         edges {
           node {
@@ -39,7 +48,7 @@ exports.createPages = async ({ graphql, actions }) => {
   publishedPosts.forEach(edge => {
     createPage({
       path: `/posts/${edge.node.slug}/`,
-      component: path.resolve("./src/templates/PostSingle.js"),
+      component: path.resolve("./src/templates/Post.tsx"),
       context: {
         id: edge.node.databasId,
       },
@@ -54,34 +63,47 @@ exports.createPages = async ({ graphql, actions }) => {
 
   publishedCustomPosts.forEach(edge => {
     createPage({
-      path: `/custom-post/${edge.node.slug}/`,
-      component: path.resolve("./src/templates/CustomPostSingle.js"),
+      path: `/custom-posts/${edge.node.slug}/`,
+      component: path.resolve("./src/templates/Post.tsx"),
       context: {
         id: edge.node.databasId,
       },
     })
   })
 
-  // Build static Pages
-  const pages = [
+  // Build Pages with Custom Templates
+  const manualPages = [
     {
       path: "/",
-      databaseId: 4,
+      databaseId: 38,
       template: path.resolve("./src/templates/Index.tsx"),
-    },
-    {
-      path: "/about/",
-      databaseId: 4,
-      template: path.resolve("./src/templates/About.tsx"),
     },
   ]
 
-  pages.forEach(page => {
+  manualPages.forEach(page => {
     createPage({
       path: page.path,
       component: page.template,
       context: {
         id: page.databaseId,
+      },
+    })
+  })
+
+  // Build pages from published Pages with generic Page Template
+  const { allWpPage } = query.data
+  const publishedPages = allWpPage.edges.filter(
+    edge =>
+      edge.node.status === "publish" &&
+      !manualPages.some(page => page.databaseId === edge.node.databaseId)
+  )
+
+  publishedPages.forEach(edge => {
+    createPage({
+      path: `/${edge.node.slug}/`,
+      component: path.resolve("./src/templates/Page.tsx"),
+      context: {
+        id: edge.node.databasId,
       },
     })
   })

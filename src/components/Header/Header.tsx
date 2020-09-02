@@ -16,15 +16,27 @@ const Header = () => {
   `)
 
   return (
-    <>
-      <Link to="/">
-        <Img
-          fluid={data.logo.childImageSharp.fluid}
-          alt="Wanna"
-          loading="eager"
-        />
-      </Link>
-    </>
+    <header>
+      <div className="logo">
+        <Link to="/">
+          <Img
+            fluid={data.logo.childImageSharp.fluid}
+            alt="Wanna"
+            loading="eager"
+          />
+        </Link>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">HOME</Link>
+          </li>
+          <li>
+            <Link to="/about/">ABOUT</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
   )
 }
 

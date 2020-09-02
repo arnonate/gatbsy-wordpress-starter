@@ -3,20 +3,21 @@ import { graphql } from "gatsby"
 
 import { Layout, Seo } from "../components"
 
-const Template = ({ data, pageContext }) => {
+const Template = ({ data }) => {
   return (
     <Layout>
-      <Seo title="Home Page" />
+      <Seo title={data.page.title} />
 
-      <h1>Home Page</h1>
+      <h1>{data.page.title}</h1>
     </Layout>
   )
 }
 
 export const Query = graphql`
-  query {
-    page: wpPage(slug: { eq: "home" }) {
-      id
+  query IndexPage($databaseId: Int) {
+    page: wpPage(databaseId: { eq: $databaseId }) {
+      title
+      content
     }
   }
 `

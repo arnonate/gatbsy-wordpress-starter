@@ -30,12 +30,12 @@ dd {
 
 /* Set core body defaults */
 body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  font-size: 16px;
-  font-family: "Montserrat", sans-serif;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -51,8 +51,8 @@ a:not([class]) {
 
 /* Make images easier to work with */
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 /* Natural flow and rhythm in articles by default */
@@ -72,7 +72,7 @@ select {
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-play-state: paused !important;
-    transition: none !important;
     scroll-behavior: auto !important;
+    transition: none !important;
   }
 }
