@@ -6,7 +6,7 @@ Associated Blog Post:
 
 ## Install Flywheel Local and set up a new Wordpress site
 
-1. Download [https://localwp.com/](Flywheel Local) and spin up a new local Wordpress Site.
+1. Download [Flywheel Local](https://localwp.com/) and spin up a new local Wordpress Site.
 
 2. Install the Headless Wordpress theme in the `wp` directory of this repo.
 
