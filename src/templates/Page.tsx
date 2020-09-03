@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img, { FluidObject } from "gatsby-image"
 
 import { Layout, Seo } from "../components"
 
@@ -16,16 +17,17 @@ const Template = ({ data }: Readonly<DataProps>): React.ReactNode => {
   return (
     <Layout>
       {data && data.page ? (
-        <>
+        <section>
           <Seo title={data.page.title} />
+
           <h1>{data.page.title}</h1>
 
-          <section
+          <div
             dangerouslySetInnerHTML={{
               __html: data.page.content,
             }}
-          ></section>
-        </>
+          />
+        </section>
       ) : (
         "No Page data returned."
       )}
@@ -36,8 +38,8 @@ const Template = ({ data }: Readonly<DataProps>): React.ReactNode => {
 export const PageQuery: void = graphql`
   query Page($id: Int) {
     page: wpPage(databaseId: { eq: $id }) {
-      title
       content
+      title
     }
   }
 `

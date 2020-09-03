@@ -48,7 +48,7 @@ nav {
 
 .girdle {
   margin: auto;
-  max-width: 860px;
+  max-width: 760px;
   padding: 1rem;
   width: 100%;
 }
@@ -73,6 +73,18 @@ nav {
 .logo {
   max-width: 400px;
   width: 100%;
+}
+
+h1 {
+  padding: 1rem 0 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h1.visually-hidden {
+  visibility: hidden;
+  font-size: 0;
+  height: 0px;
 }
 
 footer {
