@@ -53,7 +53,8 @@
   "scripts": {
     "build": "gatsby build --log-pages",
     "clean": "gatsby clean",
-    "deploy": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "deploy:github": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy:netlify": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "packages": "yarn upgrade-interactive --latest",
