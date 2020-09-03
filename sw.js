@@ -27,17 +27,17 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-c4f60d37e7a5ca3b03fa.js"
+    "url": "webpack-runtime-7dbae8e7060c6d075e6e.js"
   },
   {
-    "url": "framework-b5b229d58c3c710d5429.js"
+    "url": "framework-85aff51d15c28c7fbe5f.js"
   },
   {
-    "url": "app-5516ad72e185924bba3a.js"
+    "url": "app-4439a67fbd32ec79707c.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "d675c571f41f03f0829e3873c17d9650"
+    "revision": "d512116316e6be39e48c14273129c595"
   },
   {
     "url": "google-fonts/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_cJD3gnD_g.woff2",
@@ -56,7 +56,7 @@ self.__precacheManifest = [
     "revision": "bc3aa95dca08f5fee5291e34959c27bc"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-0097d26fbd474b34ff9b.js"
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-e5cb9e0c77a823b86dc2.js"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -64,10 +64,10 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "dc882ab9cf6a9915c0d44db0cdf58651"
+    "revision": "88bc50824fa5ce8ff29683cf925d54fa"
   },
   {
-    "url": "polyfill-ca6e03db6566e4f52123.js"
+    "url": "polyfill-d58e0217e9878f58deba.js"
   },
   {
     "url": "manifest.webmanifest",
@@ -163,7 +163,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/gatbsy-wordpress-starter/app-5516ad72e185924bba3a.js`))) {
+  if (!resources || !(await caches.match(`/gatbsy-wordpress-starter/app-4439a67fbd32ec79707c.js`))) {
     return await fetch(event.request)
   }
 
