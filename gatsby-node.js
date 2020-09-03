@@ -50,8 +50,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/posts/${edge.node.slug}/`,
       component: path.resolve("./src/templates/Post.tsx"),
       context: {
-        id: edge.node.databasId,
-        postType: "wpPost",
+        id: edge.node.databaseId,
       },
     })
   })
@@ -67,8 +66,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/custom-posts/${edge.node.slug}/`,
       component: path.resolve("./src/templates/Post.tsx"),
       context: {
-        id: edge.node.databasId,
-        postType: "wpCustomPost",
+        id: edge.node.databaseId,
       },
     })
   })

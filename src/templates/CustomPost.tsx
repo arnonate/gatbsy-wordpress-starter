@@ -75,9 +75,9 @@ const Template = ({ data }: Readonly<DataProps>): React.ReactNode => {
   )
 }
 
-export const PostQuery: void = graphql`
-  query Post($id: Int) {
-    post: wpPost(databaseId: { eq: $id }) {
+export const CustomPostQuery: void = graphql`
+  query CustomPost($id: Int) {
+    post: wpCustomPost(databaseId: { eq: $id }) {
       author {
         node {
           name

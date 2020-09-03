@@ -4,7 +4,7 @@ import { FluidObject } from "gatsby-image"
 
 import { Footer, Header } from "../../components"
 import "../../styles/normalize.css"
-import "../../styles/typebase.css"
+import "../../styles/typography.css"
 import "../../styles/global.css"
 
 export type DataProps = {
@@ -45,12 +45,7 @@ const Layout = ({ children }: Readonly<ComponentProps>): JSX.Element => {
       logo: file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
           fluid(maxWidth: 400) {
-            aspectRatio
-            src
-            srcSet
-            srcWebp
-            srcSetWebp
-            sizes
+            ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
       }

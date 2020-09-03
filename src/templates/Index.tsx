@@ -32,7 +32,7 @@ export const RenderPosts = (posts: { node: Post }[] = []): React.ReactNode =>
         moment(a.node.date).valueOf() - moment(b.node.date).valueOf()
     )
     .map(edge => (
-      <li>
+      <li key={edge.node.databaseId}>
         {moment(edge.node.date).format("MM/YY")} -{" "}
         <Link to={`/posts/${edge.node.slug}/`}>{edge.node.title}</Link>
       </li>

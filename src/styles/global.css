@@ -118,17 +118,18 @@ a.active {
 
 .styled-header {
   background-color: var(--color-background);
-  padding: 2rem 0;
+  padding: 2rem 0 0;
 }
 
 ul.nav {
   padding: 1rem 0 0;
   width: 160px;
+  list-style: none;
 }
 
 .girdle {
   margin: auto;
-  max-width: 760px;
+  max-width: 40rem;
   padding: 1rem;
   width: 100%;
 }
@@ -155,6 +156,10 @@ ul.nav {
   width: 100%;
 }
 
+.logo a:hover {
+  border: 0;
+}
+
 h1 {
   text-align: center;
   text-transform: uppercase;
@@ -162,6 +167,12 @@ h1 {
 
 .posts {
   list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.posts li {
+  margin-bottom: 1rem;
 }
 
 footer {

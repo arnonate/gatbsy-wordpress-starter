@@ -16,9 +16,9 @@ const Header = ({ data }: Readonly<ComponentProps>): JSX.Element => (
           <Link to="/" title="Go to Home Page">
             {data && (
               <Img
-                fluid={data.logo.childImageSharp.fluid}
                 alt={data.site.siteMetadata.title}
-                loading="eager"
+                className="gastby-image"
+                fluid={data.logo.childImageSharp.fluid}
               />
             )}
           </Link>
