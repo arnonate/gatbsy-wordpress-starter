@@ -64,7 +64,7 @@ exports.createPages = async ({ graphql, actions }) => {
   publishedCustomPosts.forEach(edge => {
     createPage({
       path: `/custom-posts/${edge.node.slug}/`,
-      component: path.resolve("./src/templates/Post.tsx"),
+      component: path.resolve("./src/templates/CustomPost.tsx"),
       context: {
         id: edge.node.databaseId,
       },

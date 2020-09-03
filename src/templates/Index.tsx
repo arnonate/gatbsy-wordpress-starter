@@ -25,7 +25,10 @@ type DataProps = {
   }
 }
 
-export const RenderPosts = (posts: { node: Post }[] = []): React.ReactNode =>
+export const RenderPosts = (
+  posts: { node: Post }[] = [],
+  directory: string
+): React.ReactNode =>
   posts
     .sort(
       (a, b): number =>
@@ -34,7 +37,7 @@ export const RenderPosts = (posts: { node: Post }[] = []): React.ReactNode =>
     .map(edge => (
       <li key={edge.node.databaseId}>
         {moment(edge.node.date).format("MM/YY")} -{" "}
-        <Link to={`/posts/${edge.node.slug}/`}>{edge.node.title}</Link>
+        <Link to={`/${directory}/${edge.node.slug}/`}>{edge.node.title}</Link>
       </li>
     ))
 
@@ -60,7 +63,7 @@ const Template = ({ data }: Readonly<DataProps>): React.ReactNode => (
 
       <ul className="posts">
         {data && data.posts.edges.length > 0 ? (
-          RenderPosts(data.posts.edges)
+          RenderPosts(data.posts.edges, "posts")
         ) : (
           <li>No Posts returned.</li>
         )}
@@ -70,7 +73,7 @@ const Template = ({ data }: Readonly<DataProps>): React.ReactNode => (
 
       <ul className="posts">
         {data && data.customPosts.edges.length > 0 ? (
-          RenderPosts(data.customPosts.edges)
+          RenderPosts(data.customPosts.edges, "custom-posts")
         ) : (
           <li>No Custom Posts returned.</li>
         )}
@@ -95,7 +98,6 @@ export const IndexQuery: void = graphql`
         node {
           databaseId
           date
-          excerpt
           slug
           title
         }
@@ -106,7 +108,6 @@ export const IndexQuery: void = graphql`
         node {
           databaseId
           date
-          excerpt
           slug
           title
         }
