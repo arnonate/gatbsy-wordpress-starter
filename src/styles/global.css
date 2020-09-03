@@ -1,0 +1,81 @@
+:root {
+  --color-text: #303030;
+  --color-background: #f2f2f2;
+  --color-link: #074761;
+  /* --color-link: #3e9f88; */
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+main,
+section,
+header,
+footer {
+  padding: 1rem 0;
+}
+
+a {
+  color: var(--color-link);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover,
+a.active {
+  border-bottom: 2px solid;
+}
+
+header {
+  background-color: var(--color-background);
+  padding-top: 2rem;
+}
+
+nav {
+  max-width: 150px;
+  padding: 1rem 0 0;
+  width: 100%;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+}
+
+.girdle {
+  margin: auto;
+  max-width: 860px;
+  padding: 1rem;
+  width: 100%;
+}
+
+.flex {
+  align-items: center;
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.logo {
+  max-width: 400px;
+  width: 100%;
+}
+
+footer {
+  padding-bottom: 2rem;
+  text-align: center;
+}

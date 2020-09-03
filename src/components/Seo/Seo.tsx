@@ -13,7 +13,7 @@ export type DataProps = {
 }
 
 type ComponentProps = {
-  data: Readonly<DataProps>
+  data?: Readonly<DataProps>
   description?: string
   meta?: React.DetailedHTMLProps<
     React.MetaHTMLAttributes<HTMLMetaElement>,
@@ -27,14 +27,14 @@ export const SeoComponent = ({
   meta = [],
   title,
   data,
-}: Readonly<ComponentProps>) => {
-  const { site } = data
-  const metaDescription = description || site.siteMetadata.description
+}: Readonly<ComponentProps>): JSX.Element => {
+  const metaDescription: string | undefined =
+    description || data?.site.siteMetadata.description
 
   return (
     <Helmet
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${data?.site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -58,7 +58,7 @@ export const SeoComponent = ({
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: data?.site.siteMetadata.author,
         },
         {
           name: `twitter:title`,

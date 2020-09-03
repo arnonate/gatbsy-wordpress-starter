@@ -5,30 +5,38 @@ import Img from "gatsby-image"
 import { DataProps as LayoutDataProps } from "../Layout/Layout"
 
 type ComponentProps = {
-  data: LayoutDataProps
+  data?: LayoutDataProps
 }
 
-const Header = ({ data }: Readonly<ComponentProps>) => (
+const Header = ({ data }: Readonly<ComponentProps>): JSX.Element => (
   <header>
-    <div className="logo">
-      <Link to="/">
-        <Img
-          fluid={data.logo.childImageSharp.fluid}
-          alt={data.site.siteMetadata.title}
-          loading="eager"
-        />
-      </Link>
+    <div className="girdle flex flex-column flex-center">
+      <div className="logo">
+        <Link to="/">
+          {data && (
+            <Img
+              fluid={data.logo.childImageSharp.fluid}
+              alt={data.site.siteMetadata.title}
+              loading="eager"
+            />
+          )}
+        </Link>
+      </div>
+      <nav>
+        <ul className="nav flex flex-between">
+          <li>
+            <Link to="/" activeClassName="active">
+              HOME
+            </Link>
+          </li>
+          <li>
+            <Link to="/about/" activeClassName="active">
+              ABOUT
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">HOME</Link>
-        </li>
-        <li>
-          <Link to="/about/">ABOUT</Link>
-        </li>
-      </ul>
-    </nav>
   </header>
 )
 

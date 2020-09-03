@@ -3,13 +3,23 @@ import React from "react"
 import { DataProps as LayoutDataProps } from "../Layout/Layout"
 
 type ComponentProps = {
-  data: LayoutDataProps
+  data?: LayoutDataProps
 }
 
-const Footer = ({ data }: ComponentProps) => (
+const Footer = ({ data }: ComponentProps): JSX.Element => (
   <footer>
-    &copy; {new Date().getFullYear()} {data.site.siteMetadata.title}. A
-    Gatsby/WP starter by <a href="https://twitter.com/arnonate">arnonate</a>
+    <p>
+      &copy; {new Date().getFullYear()} {data?.site.siteMetadata.title}. A
+      Gatsby/WP starter by{" "}
+      <a href="https://twitter.com/arnonate">
+        {data?.site.siteMetadata.author}.
+      </a>
+    </p>
+    <p>
+      <a href="https://github.com/arnonate/gatbsy-wordpress-starter">
+        View on GitHub
+      </a>
+    </p>
   </footer>
 )
 

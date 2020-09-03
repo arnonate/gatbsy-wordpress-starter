@@ -3,19 +3,39 @@ import { graphql } from "gatsby"
 
 import { Layout, Seo } from "../components"
 
-const Template = ({ data }) => {
+type DataProps = {
+  data?: {
+    page: {
+      title: string
+      content: string
+    }
+  }
+}
+
+const Template = ({ data }: Readonly<DataProps>): React.ReactNode => {
   return (
     <Layout>
-      <Seo title={data.page.title} />
+      {data && data.page ? (
+        <>
+          <Seo title={data.page.title} />
+          <h1>{data.page.title}</h1>
 
-      <h1>{data.page.title}</h1>
+          <section
+            dangerouslySetInnerHTML={{
+              __html: data.page.content,
+            }}
+          ></section>
+        </>
+      ) : (
+        "No Page data returned."
+      )}
     </Layout>
   )
 }
 
-export const Query = graphql`
-  query Page($databaseId: Int) {
-    page: wpPage(databaseId: { eq: $databaseId }) {
+export const PageQuery: void = graphql`
+  query Page($id: Int) {
+    page: wpPage(databaseId: { eq: $id }) {
       title
       content
     }

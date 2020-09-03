@@ -103,7 +103,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/${edge.node.slug}/`,
       component: path.resolve("./src/templates/Page.tsx"),
       context: {
-        id: edge.node.databasId,
+        id: edge.node.databaseId,
       },
     })
   })

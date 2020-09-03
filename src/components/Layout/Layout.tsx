@@ -15,13 +15,14 @@ export type DataProps = {
   site: {
     siteMetadata: {
       title: string
+      author: string
     }
   }
 }
 
 type ComponentProps = {
-  children: JSX.Element
-  data: Readonly<DataProps>
+  children: React.ReactNode
+  data?: Readonly<DataProps>
 }
 
 export const LayoutComponent = ({
@@ -30,12 +31,14 @@ export const LayoutComponent = ({
 }: Readonly<ComponentProps>): JSX.Element => (
   <>
     <Header data={data} />
-    <main>{children}</main>
+    <main>
+      <div className="girdle">{children}</div>
+    </main>
     <Footer data={data} />
   </>
 )
 
-const Layout = ({ children }: ComponentProps) => {
+const Layout = ({ children }: ComponentProps): JSX.Element => {
   const data = useStaticQuery<DataProps>(graphql`
     query {
       logo: file(relativePath: { eq: "logo.png" }) {
@@ -48,6 +51,7 @@ const Layout = ({ children }: ComponentProps) => {
       site {
         siteMetadata {
           title
+          author
         }
       }
     }
