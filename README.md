@@ -2,6 +2,8 @@
 
 An unopinionated starter for Gatsby and WordPress.
 
+Hosted Site: https://arnonate.github.io/gatbsy-wordpress-starter/
+
 Associated Blog Post:
 
 ## Install Flywheel Local and set up a new Wordpress site
