@@ -39,7 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
     throw new Error(query.errors)
   }
 
-  // Build pages from published Posts
+  // Build Pages from published Posts
   const { allWpPost } = query.data
   const publishedPosts = allWpPost.edges.filter(
     edge => edge.node.status === "publish"
@@ -51,11 +51,12 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve("./src/templates/Post.tsx"),
       context: {
         id: edge.node.databasId,
+        postType: "wpPost",
       },
     })
   })
 
-  // Build pages from published Custom Post Type
+  // Build Pages from published Custom Post Type
   const { allWpCustomPost } = query.data
   const publishedCustomPosts = allWpCustomPost.edges.filter(
     edge => edge.node.status === "publish"
@@ -67,6 +68,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve("./src/templates/Post.tsx"),
       context: {
         id: edge.node.databasId,
+        postType: "wpCustomPost",
       },
     })
   })
@@ -90,7 +92,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // Build pages from published Pages with generic Page Template
+  // Build Pages from published Pages with generic Page Template
   const { allWpPage } = query.data
   const publishedPages = allWpPage.edges.filter(
     edge =>

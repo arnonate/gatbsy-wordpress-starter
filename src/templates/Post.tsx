@@ -1,12 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { FluidObject } from "gatsby-image"
+import Img, { FluidObject } from "gatsby-image"
 
 import { Layout, Seo } from "../components"
 
 export type Post = {
   content: string
   databaseId: number
+  date: string
   excerpt: string
   featuredImage: {
     node: {
@@ -23,20 +24,72 @@ export type Post = {
   title: string
 }
 
-const Template = ({ data, pageContext }) => {
+type DataProps = {
+  data?: {
+    post: Post
+  }
+}
+
+const Template = ({ data }: Readonly<DataProps>): React.ReactNode => {
   return (
     <Layout>
-      <Seo title="Post Page" />
+      <article>
+        {data && data.post ? (
+          <>
+            <Seo title={data.post.title} />
+            <h1>{data.post.title}</h1>
 
-      <h1>Post Page</h1>
+            {data && (
+              <Img
+                fluid={
+                  data.post.featuredImage.node.localFile.childImageSharp.fluid
+                }
+                alt={data.post.featuredImage.node.altText}
+                loading="eager"
+              />
+            )}
+
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.post.content,
+              }}
+            />
+          </>
+        ) : (
+          <>No Page content returned.</>
+        )}
+      </article>
     </Layout>
   )
 }
 
-export const Query = graphql`
-  query {
-    page: wpPage(slug: { eq: "post" }) {
-      id
+export const PostQuery: void = graphql`
+  query Post($id: Int) {
+    post: wpPost(databaseId: { eq: $id }) {
+      content
+      databaseId
+      date
+      excerpt
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1200) {
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+              }
+            }
+          }
+          title
+        }
+      }
+      slug
+      title
     }
   }
 `

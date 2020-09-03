@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img, { FluidObject } from "gatsby-image"
 
 import { Layout, Seo } from "../components"
 
@@ -16,21 +15,22 @@ type DataProps = {
 const Template = ({ data }: Readonly<DataProps>): React.ReactNode => {
   return (
     <Layout>
-      {data && data.page ? (
-        <section>
-          <Seo title={data.page.title} />
+      <article>
+        {data && data.page ? (
+          <>
+            <Seo title={data.page.title} />
+            <h1>{data.page.title}</h1>
 
-          <h1>{data.page.title}</h1>
-
-          <div
-            dangerouslySetInnerHTML={{
-              __html: data.page.content,
-            }}
-          />
-        </section>
-      ) : (
-        "No Page data returned."
-      )}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.page.content,
+              }}
+            />
+          </>
+        ) : (
+          <>No Page content returned.</>
+        )}
+      </article>
     </Layout>
   )
 }

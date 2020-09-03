@@ -1,6 +1,6 @@
 # 🚀 Gatbsy/Wordpress Starter
 
-An unopinionated Gatsby/WordPress/TypeScript starter.
+An unopinionated starter for Gatsby and WordPress.
 
 Associated Blog Post:
 

@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Img, { FluidObject } from "gatsby-image"
+import moment from "moment"
 
 import { Layout, Seo } from "../components"
 import { Post } from "./Post"
@@ -15,17 +15,6 @@ type DataProps = {
     page: {
       title: string
       content: string
-      featuredImage: {
-        node: {
-          altText: string
-          localFile: {
-            childImageSharp: {
-              fluid: FluidObject
-            }
-          }
-          title: string
-        }
-      }
     }
     posts: {
       edges: { node: Post }[]
@@ -36,65 +25,57 @@ type DataProps = {
   }
 }
 
+export const RenderPosts = (posts: { node: Post }[] = []): React.ReactNode =>
+  posts
+    .sort(
+      (a, b): number =>
+        moment(a.node.date).valueOf() - moment(b.node.date).valueOf()
+    )
+    .map(edge => (
+      <li>
+        {moment(edge.node.date).format("MM/YY")} -{" "}
+        <Link to={`/posts/${edge.node.slug}/`}>{edge.node.title}</Link>
+      </li>
+    ))
+
 const Template = ({ data }: Readonly<DataProps>): React.ReactNode => (
   <Layout>
-    {data && data.page ? (
-      <section>
-        <Seo title={data.page.title} />
+    <article>
+      {data && data.page ? (
+        <>
+          <Seo title={data.page.title} />
+          <h1 className="sr-only">{data.site.siteMetadata.title}</h1>
 
-        <h1 className="visually-hidden">{data.site.siteMetadata.title}</h1>
-
-        {data.page.featuredImage ? (
-          <Img
-            fluid={data.page.featuredImage.node.localFile.childImageSharp.fluid}
-            alt={data.page.featuredImage.node.altText}
-            loading="lazy"
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.page.content,
+            }}
           />
-        ) : null}
+        </>
+      ) : (
+        <>No Page content returned.</>
+      )}
 
-        <div
-          dangerouslySetInnerHTML={{
-            __html: data.page.content,
-          }}
-        />
-      </section>
-    ) : (
-      "No Page data returned."
-    )}
-
-    <section>
       <h2>Posts</h2>
 
-      <ul>
+      <ul className="posts">
         {data && data.posts.edges.length > 0 ? (
-          data.posts.edges.map(edge => (
-            <li>
-              <Link to={`/posts/${edge.node.slug}/`}>{edge.node.title}</Link>
-            </li>
-          ))
+          RenderPosts(data.posts.edges)
         ) : (
           <li>No Posts returned.</li>
         )}
       </ul>
-    </section>
 
-    <section>
       <h2>Custom Posts:</h2>
 
-      <ul>
+      <ul className="posts">
         {data && data.customPosts.edges.length > 0 ? (
-          data.customPosts.edges.map(edge => (
-            <li>
-              <Link to={`/custom-posts/${edge.node.slug}/`}>
-                {edge.node.title}
-              </Link>
-            </li>
-          ))
+          RenderPosts(data.customPosts.edges)
         ) : (
           <li>No Custom Posts returned.</li>
         )}
       </ul>
-    </section>
+    </article>
   </Layout>
 )
 
@@ -108,39 +89,13 @@ export const IndexQuery: void = graphql`
     page: wpPage(databaseId: { eq: $id }) {
       content
       title
-      featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 800) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
-            }
-          }
-          title
-        }
-      }
     }
     posts: allWpPost(filter: { status: { eq: "publish" } }) {
       edges {
         node {
-          content
           databaseId
+          date
           excerpt
-          featuredImage {
-            node {
-              altText
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 1200) {
-                    ...GatsbyImageSharpFluid_withWebp_noBase64
-                  }
-                }
-              }
-              title
-            }
-          }
           slug
           title
         }
@@ -149,22 +104,9 @@ export const IndexQuery: void = graphql`
     customPosts: allWpCustomPost(filter: { status: { eq: "publish" } }) {
       edges {
         node {
-          content
           databaseId
+          date
           excerpt
-          featuredImage {
-            node {
-              altText
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 1200) {
-                    ...GatsbyImageSharpFluid_withWebp_noBase64
-                  }
-                }
-              }
-              title
-            }
-          }
           slug
           title
         }

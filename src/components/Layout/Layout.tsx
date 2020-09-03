@@ -3,7 +3,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import { FluidObject } from "gatsby-image"
 
 import { Footer, Header } from "../../components"
-import "../../styles/reset.css"
+import "../../styles/normalize.css"
+import "../../styles/typebase.css"
 import "../../styles/global.css"
 
 export type DataProps = {
@@ -38,13 +39,18 @@ export const LayoutComponent = ({
   </>
 )
 
-const Layout = ({ children }: ComponentProps): JSX.Element => {
+const Layout = ({ children }: Readonly<ComponentProps>): JSX.Element => {
   const data = useStaticQuery<DataProps>(graphql`
     query {
       logo: file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
           fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
+            aspectRatio
+            src
+            srcSet
+            srcWebp
+            srcSetWebp
+            sizes
           }
         }
       }

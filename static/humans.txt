@@ -1,0 +1,10 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Nate Arnold -- Developer -- @arnonate
+
+# TECHNOLOGY COLOPHON
+
+    Gatbsy, Netlify, WordPress, TypeScript, HTML5 Boilerplate

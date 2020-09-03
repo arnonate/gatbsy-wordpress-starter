@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Headless`,
-    description: `An unopinionated Gatsby/WordPress/TypeScript starter.`,
+    description: `An unopinionated starter for Gatsby and WordPress.`,
     author: `@arnonate`,
   },
   plugins: [
