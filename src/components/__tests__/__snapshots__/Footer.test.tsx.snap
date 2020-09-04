@@ -12,6 +12,7 @@ exports[`Footer renders correctly 1`] = `
     <a
       href="https://twitter.com/arnonate"
     >
+      @arnonate
       .
     </a>
   </p>

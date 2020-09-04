@@ -33,7 +33,9 @@ type ComponentProps = {
 export const SeoComponent = ({
   data,
   description = data?.site.siteMetadata.description,
-  image = `${data?.site.siteMetadata.siteUrl}${data?.image.childImageSharp.fixed.src}`,
+  image = `${data?.site.siteMetadata.siteUrl || ""}${
+    data?.image.childImageSharp.fixed.src || ""
+  }`,
   meta = [],
   title = data?.site.siteMetadata.title,
 }: Readonly<ComponentProps>): JSX.Element => {

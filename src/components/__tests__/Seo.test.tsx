@@ -10,6 +10,7 @@ const data: DataProps = {
       title: "Headless",
       description: "This is the description of Headless.",
       author: "@arnonate",
+      siteUrl: "https://siteUrl",
     },
   },
   image: {
@@ -17,8 +18,8 @@ const data: DataProps = {
       fixed: {
         width: 1200,
         height: 650,
-        src: "og:image",
-        srcSet: "og:image srcSet",
+        src: "/og:image.png",
+        srcSet: "/og:image.png srcSet",
       },
     },
   },
