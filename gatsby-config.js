@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Headless`,
+    title: `Headless WordPress + Gatsby`,
     description: `An unopinionated starter for Gatsby and WordPress.`,
     author: `@arnonate`,
-    siteUrl: `https://arnonate.github.io`,
+    siteUrl: `https://gatsby-wordpress-starter@natearnold.me`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
