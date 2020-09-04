@@ -18,6 +18,7 @@ const Header = ({ data }: Readonly<ComponentProps>): JSX.Element => (
               <Img
                 alt={data.site.siteMetadata.title}
                 fluid={data.logo.childImageSharp.fluid}
+                loading="eager"
               />
             )}
           </Link>
