@@ -10,7 +10,7 @@ const Footer = ({ data }: ComponentProps): JSX.Element => (
   <footer>
     <p>
       &copy; {new Date().getFullYear()} {data?.site.siteMetadata.title}. A
-      Gatsby/WP starter by{" "}
+      starter repo by{" "}
       <a href="https://twitter.com/arnonate">
         {data?.site.siteMetadata.author}.
       </a>
