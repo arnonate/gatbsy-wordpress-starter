@@ -48,7 +48,7 @@ exports.createPages = async ({ graphql, actions }) => {
   publishedPosts.forEach(edge => {
     createPage({
       path: `/posts/${edge.node.slug}/`,
-      component: path.resolve("./src/templates/Post.tsx"),
+      component: path.resolve("./src/templates/Post/Post.tsx"),
       context: {
         id: edge.node.databaseId,
       },
@@ -64,7 +64,7 @@ exports.createPages = async ({ graphql, actions }) => {
   publishedCustomPosts.forEach(edge => {
     createPage({
       path: `/custom-posts/${edge.node.slug}/`,
-      component: path.resolve("./src/templates/CustomPost.tsx"),
+      component: path.resolve("./src/templates/CustomPost/CustomPost.tsx"),
       context: {
         id: edge.node.databaseId,
       },
@@ -76,7 +76,7 @@ exports.createPages = async ({ graphql, actions }) => {
     {
       path: "/",
       databaseId: 38,
-      template: path.resolve("./src/templates/Index.tsx"),
+      template: path.resolve("./src/templates/Index/Index.tsx"),
     },
   ]
 
@@ -101,7 +101,7 @@ exports.createPages = async ({ graphql, actions }) => {
   publishedPages.forEach(edge => {
     createPage({
       path: `/${edge.node.slug}/`,
-      component: path.resolve("./src/templates/Page.tsx"),
+      component: path.resolve("./src/templates/Page/Page.tsx"),
       context: {
         id: edge.node.databaseId,
       },

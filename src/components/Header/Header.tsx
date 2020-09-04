@@ -17,7 +17,6 @@ const Header = ({ data }: Readonly<ComponentProps>): JSX.Element => (
             {data && (
               <Img
                 alt={data.site.siteMetadata.title}
-                className="gastby-image"
                 fluid={data.logo.childImageSharp.fluid}
               />
             )}

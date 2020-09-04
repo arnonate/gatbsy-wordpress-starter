@@ -24,11 +24,51 @@ const data: LayoutDataProps = {
 }
 
 describe("Header", () => {
-  it("renders correctly", () => {
+  it("renders logo with correct source and alt text", () => {
     const component = <Header data={data} />
 
     const { container } = render(component)
 
-    expect(container.firstElementChild).toMatchSnapshot()
+    expect(container.querySelector("img")).toMatchInlineSnapshot(`
+      <img
+        alt="Headless"
+        loading="lazy"
+        sizes="img sizes"
+        src="img src"
+        srcset="img srcSet"
+        style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 500ms;"
+      />
+    `)
+  })
+
+  it("renders nav correctly", () => {
+    const component = <Header data={data} />
+
+    const { container } = render(component)
+
+    expect(container.querySelector("nav")).toMatchInlineSnapshot(`
+      <nav
+        aria-label="Primary"
+      >
+        <ul
+          class="nav flex flex-between"
+        >
+          <li>
+            <a
+              href="/"
+            >
+              HOME
+            </a>
+          </li>
+          <li>
+            <a
+              href="/about/"
+            >
+              ABOUT
+            </a>
+          </li>
+        </ul>
+      </nav>
+    `)
   })
 })

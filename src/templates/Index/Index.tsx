@@ -2,10 +2,10 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import moment from "moment"
 
-import { Layout, Seo } from "../components"
-import { Post } from "./Post"
+import { Layout, Seo } from "../../components"
+import { Post } from "../Post/Post"
 
-type DataProps = {
+export type DataProps = {
   data?: {
     site: {
       siteMetadata: {
@@ -36,12 +36,12 @@ export const RenderPosts = (
     )
     .map(edge => (
       <li key={edge.node.databaseId}>
-        {moment(edge.node.date).format("MM/YY")} -{" "}
+        <span>{moment(edge.node.date).format("MM/YY")} - </span>
         <Link to={`/${directory}/${edge.node.slug}/`}>{edge.node.title}</Link>
       </li>
     ))
 
-const Template = ({ data }: Readonly<DataProps>): React.ReactNode => (
+const IndexTemplate = ({ data }: Readonly<DataProps>): JSX.Element => (
   <Layout>
     <article>
       {data && data.page ? (
@@ -116,4 +116,4 @@ export const IndexQuery: void = graphql`
   }
 `
 
-export default Template
+export default IndexTemplate

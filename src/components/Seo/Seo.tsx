@@ -32,12 +32,12 @@ type ComponentProps = {
 
 export const SeoComponent = ({
   data,
-  description = data?.site.siteMetadata.description,
+  description = data?.site.siteMetadata.description || "",
   image = `${data?.site.siteMetadata.siteUrl || ""}${
     data?.image.childImageSharp.fixed.src || ""
   }`,
   meta = [],
-  title = data?.site.siteMetadata.title,
+  title = data?.site.siteMetadata.title || "",
 }: Readonly<ComponentProps>): JSX.Element => {
   const combinedTitle = `${title} | ${data?.site.siteMetadata.title}`
 

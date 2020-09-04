@@ -29,6 +29,30 @@ describe("Footer", () => {
 
     const { container } = render(component)
 
-    expect(container.firstElementChild).toMatchSnapshot()
+    expect(container.firstElementChild).toMatchInlineSnapshot(`
+      <footer>
+        <p>
+          © 
+          2020
+           
+          Headless
+          . A Gatsby/WP starter by
+           
+          <a
+            href="https://twitter.com/arnonate"
+          >
+            @arnonate
+            .
+          </a>
+        </p>
+        <p>
+          <a
+            href="https://github.com/arnonate/gatbsy-wordpress-starter"
+          >
+            View on GitHub
+          </a>
+        </p>
+      </footer>
+    `)
   })
 })

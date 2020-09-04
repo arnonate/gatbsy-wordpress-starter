@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { Layout, Seo } from "../components"
+import { Layout, Seo } from "../../components"
 
-type DataProps = {
+export type DataProps = {
   data?: {
     page: {
       title: string
@@ -12,7 +12,7 @@ type DataProps = {
   }
 }
 
-const Template = ({ data }: Readonly<DataProps>): React.ReactNode => {
+const PageTemplate = ({ data }: Readonly<DataProps>): JSX.Element => {
   return (
     <Layout>
       <article>
@@ -44,4 +44,4 @@ export const PageQuery: void = graphql`
   }
 `
 
-export default Template
+export default PageTemplate

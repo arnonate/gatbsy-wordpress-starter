@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Img, { FluidObject } from "gatsby-image"
 import moment from "moment"
 
-import { Layout, Seo } from "../components"
+import { Layout, Seo } from "../../components"
 
 export type Post = {
   author: {
@@ -36,7 +36,7 @@ type DataProps = {
   }
 }
 
-const Template = ({ data }: Readonly<DataProps>): React.ReactNode => {
+const Template = ({ data }: Readonly<DataProps>): JSX.Element => {
   return (
     <Layout>
       <article>
@@ -75,9 +75,9 @@ const Template = ({ data }: Readonly<DataProps>): React.ReactNode => {
   )
 }
 
-export const PostQuery: void = graphql`
-  query Post($id: Int) {
-    post: wpPost(databaseId: { eq: $id }) {
+export const CustomPostQuery: void = graphql`
+  query CustomPost($id: Int) {
+    post: wpCustomPost(databaseId: { eq: $id }) {
       author {
         node {
           name
