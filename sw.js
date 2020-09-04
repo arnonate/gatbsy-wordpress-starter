@@ -27,17 +27,17 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-044c14f81a0bdce0e7c4.js"
+    "url": "webpack-runtime-005f59d11ee94fbdc276.js"
   },
   {
     "url": "framework-85aff51d15c28c7fbe5f.js"
   },
   {
-    "url": "app-4d8cff6f284392c99363.js"
+    "url": "app-c62bdaf95f4f6d63de71.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "c62f13212fb91c78fca75f50a25c4472"
+    "revision": "6ffb0d5b438c268539c09f225237cdf0"
   },
   {
     "url": "google-fonts/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_cJD3gnD_g.woff2",
@@ -59,19 +59,11 @@ self.__precacheManifest = [
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-e5cb9e0c77a823b86dc2.js"
   },
   {
-    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "f6081b83111aea4128c98944b7fafccc"
-  },
-  {
-    "url": "page-data/app-data.json",
-    "revision": "4c5522546559e887c657ddca85cd8b14"
-  },
-  {
     "url": "polyfill-d58e0217e9878f58deba.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "6a548108a6bd46ebfadecfb1e8e0d4f7"
+    "revision": "6492644a1b0fa9967db5ef9eeb695b24"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -158,12 +150,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/gatbsy-wordpress-starter`), ``)
+  pathname = pathname.replace(new RegExp(`^`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/gatbsy-wordpress-starter/app-4d8cff6f284392c99363.js`))) {
+  if (!resources || !(await caches.match(`/app-c62bdaf95f4f6d63de71.js`))) {
     return await fetch(event.request)
   }
 
@@ -176,7 +168,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/gatbsy-wordpress-starter/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
