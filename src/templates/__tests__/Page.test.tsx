@@ -12,7 +12,7 @@ const data: PageDataProps["data"] = {
 }
 
 describe("Page", () => {
-  it("renders a header and footer", () => {
+  it("renders content", () => {
     const component = <PageTemplate data={data} />
 
     const { container } = render(component)

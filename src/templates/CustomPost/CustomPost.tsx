@@ -30,7 +30,7 @@ export type Post = {
   title: string
 }
 
-type DataProps = {
+export type DataProps = {
   data?: {
     post: Post
   }
