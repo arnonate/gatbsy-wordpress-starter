@@ -14,6 +14,7 @@ export type DataProps = {
       title: string
       description: string
       author: string
+      siteUrl: string
     }
   }
 }
@@ -32,7 +33,7 @@ type ComponentProps = {
 export const SeoComponent = ({
   data,
   description = data?.site.siteMetadata.description,
-  image = data?.image.childImageSharp.fixed.src,
+  image = `${data?.site.siteMetadata.siteUrl}${data?.image.childImageSharp.fixed.src}`,
   meta = [],
   title = data?.site.siteMetadata.title,
 }: Readonly<ComponentProps>): JSX.Element => {
@@ -113,9 +114,10 @@ const Seo = (props: ComponentProps): JSX.Element => {
         }
         site {
           siteMetadata {
-            title
-            description
             author
+            description
+            siteUrl
+            title
           }
         }
       }

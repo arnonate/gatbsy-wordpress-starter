@@ -4,6 +4,7 @@ module.exports = {
     title: `Headless`,
     description: `An unopinionated starter for Gatsby and WordPress.`,
     author: `@arnonate`,
+    siteUrl: `https://arnonate.github.io/gatbsy-wordpress-starter`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
