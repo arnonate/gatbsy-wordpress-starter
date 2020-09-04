@@ -3,7 +3,7 @@ module.exports = {
     title: `Headless WordPress + Gatsby`,
     description: `An unopinionated starter for Gatsby and WordPress.`,
     author: `@arnonate`,
-    siteUrl: `https://gatsby-wordpress-starter@natearnold.me`,
+    siteUrl: `https://gatsby-wordpress-starter.natearnold.me`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
