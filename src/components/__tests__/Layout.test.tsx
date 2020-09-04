@@ -17,6 +17,7 @@ const data: DataProps = {
   site: {
     siteMetadata: {
       title: "Headless",
+      author: "@arnonate",
     },
   },
 }

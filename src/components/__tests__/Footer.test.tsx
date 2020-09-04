@@ -18,6 +18,7 @@ const data: LayoutDataProps = {
   site: {
     siteMetadata: {
       title: "Headless",
+      author: "@arnonate",
     },
   },
 }
