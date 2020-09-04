@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: "/gatbsy-wordpress-starter/",
   siteMetadata: {
     title: `Headless`,
     description: `An unopinionated starter for Gatsby and WordPress.`,
