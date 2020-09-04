@@ -1,8 +1,14 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { FixedObject } from "gatsby-image"
 
 export type DataProps = {
+  image: {
+    childImageSharp: {
+      fixed: FixedObject
+    }
+  }
   site: {
     siteMetadata: {
       title: string
@@ -15,42 +21,58 @@ export type DataProps = {
 type ComponentProps = {
   data?: Readonly<DataProps>
   description?: string
+  image?: string
   meta?: React.DetailedHTMLProps<
     React.MetaHTMLAttributes<HTMLMetaElement>,
     HTMLMetaElement
   >[]
-  title: string
+  title?: string
 }
 
 export const SeoComponent = ({
-  description = "",
-  meta = [],
-  title,
   data,
+  description = data?.site.siteMetadata.description,
+  image = data?.image.childImageSharp.fixed.src,
+  meta = [],
+  title = data?.site.siteMetadata.title,
 }: Readonly<ComponentProps>): JSX.Element => {
-  const metaDescription: string | undefined =
-    description || data?.site.siteMetadata.description
+  const combinedTitle = `${title} | ${data?.site.siteMetadata.title}`
 
   return (
     <Helmet
-      title={title}
-      titleTemplate={`%s | ${data?.site.siteMetadata.title}`}
+      title={combinedTitle}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: description,
+        },
+        {
+          itemProp: `name`,
+          content: combinedTitle,
+        },
+        {
+          itemProp: `description`,
+          content: description,
+        },
+        {
+          itemProp: `image`,
+          content: image,
         },
         {
           property: `og:title`,
-          content: title,
+          content: combinedTitle,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: image,
         },
         {
           name: `twitter:card`,
@@ -62,11 +84,15 @@ export const SeoComponent = ({
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: combinedTitle,
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: description,
+        },
+        {
+          name: `twitter:image`,
+          content: image,
         },
         ...meta,
       ]}
@@ -78,6 +104,13 @@ const Seo = (props: ComponentProps): JSX.Element => {
   const data = useStaticQuery<DataProps>(
     graphql`
       query {
+        image: file(relativePath: { eq: "screenshot.png" }) {
+          childImageSharp {
+            fixed(width: 1200) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         site {
           siteMetadata {
             title
