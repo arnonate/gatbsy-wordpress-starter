@@ -14,7 +14,7 @@ Object {
       "name": "description",
     },
     Object {
-      "content": "Headless Page",
+      "content": "Headless Page | Headless",
       "property": "og:title",
     },
     Object {
@@ -26,6 +26,10 @@ Object {
       "property": "og:type",
     },
     Object {
+      "content": "og:image",
+      "property": "og:image",
+    },
+    Object {
       "content": "summary",
       "name": "twitter:card",
     },
@@ -34,12 +38,16 @@ Object {
       "name": "twitter:creator",
     },
     Object {
-      "content": "Headless Page",
+      "content": "Headless Page | Headless",
       "name": "twitter:title",
     },
     Object {
       "content": "This is a description of Headless Page",
       "name": "twitter:description",
+    },
+    Object {
+      "content": "og:image",
+      "name": "twitter:image",
     },
   ],
   "noscriptTags": Array [],
@@ -65,7 +73,7 @@ Object {
       "name": "description",
     },
     Object {
-      "content": "Headless Page",
+      "content": "Headless Page | Headless",
       "property": "og:title",
     },
     Object {
@@ -77,6 +85,10 @@ Object {
       "property": "og:type",
     },
     Object {
+      "content": "og:image",
+      "property": "og:image",
+    },
+    Object {
       "content": "summary",
       "name": "twitter:card",
     },
@@ -85,12 +97,16 @@ Object {
       "name": "twitter:creator",
     },
     Object {
-      "content": "Headless Page",
+      "content": "Headless Page | Headless",
       "name": "twitter:title",
     },
     Object {
       "content": "This is the description of Headless.",
       "name": "twitter:description",
+    },
+    Object {
+      "content": "og:image",
+      "name": "twitter:image",
     },
     Object {
       "content": "content",
@@ -124,7 +140,7 @@ Object {
       "name": "description",
     },
     Object {
-      "content": "Headless Page",
+      "content": "Headless Page | Headless",
       "property": "og:title",
     },
     Object {
@@ -136,6 +152,10 @@ Object {
       "property": "og:type",
     },
     Object {
+      "content": "og:image",
+      "property": "og:image",
+    },
+    Object {
       "content": "summary",
       "name": "twitter:card",
     },
@@ -144,12 +164,16 @@ Object {
       "name": "twitter:creator",
     },
     Object {
-      "content": "Headless Page",
+      "content": "Headless Page | Headless",
       "name": "twitter:title",
     },
     Object {
       "content": "This is the description of Headless.",
       "name": "twitter:description",
+    },
+    Object {
+      "content": "og:image",
+      "name": "twitter:image",
     },
   ],
   "noscriptTags": Array [],

@@ -12,6 +12,16 @@ const data: DataProps = {
       author: "@arnonate",
     },
   },
+  image: {
+    childImageSharp: {
+      fixed: {
+        width: 1200,
+        height: 650,
+        src: "og:image",
+        srcSet: "og:image srcSet",
+      },
+    },
+  },
 }
 
 describe("Seo", () => {
