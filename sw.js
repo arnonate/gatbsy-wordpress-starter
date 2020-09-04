@@ -27,17 +27,17 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-b43cc13bd43257eee171.js"
+    "url": "webpack-runtime-044c14f81a0bdce0e7c4.js"
   },
   {
     "url": "framework-85aff51d15c28c7fbe5f.js"
   },
   {
-    "url": "app-bb89cd6bb3574e9cd05a.js"
+    "url": "app-4d8cff6f284392c99363.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "8ac1969b5770cc162fd93990f3ab19da"
+    "revision": "c62f13212fb91c78fca75f50a25c4472"
   },
   {
     "url": "google-fonts/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_cJD3gnD_g.woff2",
@@ -64,7 +64,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "a1f58567f355937238fe1923405457dd"
+    "revision": "4c5522546559e887c657ddca85cd8b14"
   },
   {
     "url": "polyfill-d58e0217e9878f58deba.js"
@@ -163,7 +163,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/gatbsy-wordpress-starter/app-bb89cd6bb3574e9cd05a.js`))) {
+  if (!resources || !(await caches.match(`/gatbsy-wordpress-starter/app-4d8cff6f284392c99363.js`))) {
     return await fetch(event.request)
   }
 
