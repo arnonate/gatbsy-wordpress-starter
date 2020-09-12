@@ -1,6 +1,6 @@
 # 🚀 Gatbsy/Wordpress Starter
 
-An unopinionated starter for Gatsby and WordPress.
+An unopinionated Gatsby/WordPress starter written in TypeScript.
 
 Hosted Site: https://arnonate.github.io/gatbsy-wordpress-starter/
 
@@ -10,7 +10,7 @@ Associated Blog Post:
 
 1. Download [Flywheel Local](https://localwp.com/) and spin up a new local Wordpress Site.
 
-2. Install the Headless Wordpress theme in the `wp` directory of this repo.
+2. Install the Headless Wordpress theme in the `wp` directory of this repo or get [the most recent version of the Headless theme from this repo](https://github.com/arnonate/headless-wordpress).
 
 3. Install the following plugins:
 
